@@ -29,7 +29,6 @@ def home_page():
     db_response = table.scan()
     message_item = db_response['Items']
     r = jsonify(message_item)
-    r.raise_for_status()
     items = r.json()
 
     form = MessageForm()
@@ -58,4 +57,4 @@ def health_check():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=80, debug=True)
