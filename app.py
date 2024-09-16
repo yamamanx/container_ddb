@@ -30,7 +30,7 @@ def home_page():
     message_item = db_response['Items']
 
     form = MessageForm()
-
+    
     return render_template('home.html', items=message_item, form=form)
 
 
