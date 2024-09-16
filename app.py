@@ -28,12 +28,10 @@ class MessageForm(FlaskForm):
 def home_page():
     db_response = table.scan()
     message_item = db_response['Items']
-    r = jsonify(message_item)
-    items = r.json()
 
     form = MessageForm()
 
-    return render_template('home.html', items=items, form=form)
+    return render_template('home.html', items=message_item, form=form)
 
 
 @app.route('/', methods=['POST'])
